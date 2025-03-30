@@ -39,4 +39,9 @@ public class Color {
         return String.format("rgb(%d, %d, %d)", this.red, this.green, this.blue);
     }
 
+    @Override
+    public String toString() {
+        return this.rgbFormat();
+    }
+
 }

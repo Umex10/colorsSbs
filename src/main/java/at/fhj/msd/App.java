@@ -8,10 +8,7 @@ public class App {
         System.out.println(c1.rgbFormat());
         System.out.println(c1.hexFormat());
 
-        System.out.println(Integer.toHexString(255));
-        
-        
-
+        System.out.println(c1.toString());
 
     }
 }
