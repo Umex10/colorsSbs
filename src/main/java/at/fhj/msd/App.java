@@ -20,9 +20,13 @@ public class App {
         System.out.printf("c1 = c3? --> %b\n", c1.equals(c3));
         System.out.printf("c2 = c3? --> %b\n", c2.equals(c3));
 
-        List<Color> colors = c1.randomColors(5);
+        List<Color> randomColors = c1.randomColors(50000);
 
-        System.out.println(colors);
+        List<Color> uniqColors = c1.uniqColors(randomColors);
+
+        System.out.printf("Size of randomColors: %d\nSize of uniqColors: %d", randomColors.size(), uniqColors.size());
+
+        
 
     }
 }

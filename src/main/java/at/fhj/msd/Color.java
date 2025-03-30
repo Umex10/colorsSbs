@@ -67,7 +67,7 @@ public class Color {
 
     public static List<Color> randomColors(int amount) {
 
-        List<Color> colors = new ArrayList<>();
+        List<Color> randomColors = new ArrayList<>();
 
         for (int i = 0; i < amount; i++) {
             int red = rnd.nextInt(256);
@@ -76,12 +76,32 @@ public class Color {
 
             Color c = new Color(red, green, blue);
 
-            colors.add(c);
+            randomColors.add(c);
         }
 
-        return colors;
+        return randomColors;
     }
 
-    
+    public static List<Color> uniqColors2(List<Color> randomColors) {
+
+        List<Color> uniqColors = new ArrayList<>();
+        boolean isIn = false;
+
+        for (int i = 0; i<randomColors.size(); i++) {
+            
+            for (int u = 0; u<uniqColors.size(); u++) {
+                if (uniqColors.get(u).equals(randomColors.get(i))) {
+                    isIn = true;
+                    break;
+                }
+            }
+            if (!isIn) {
+                uniqColors.add(randomColors.get(i));
+            } 
+            isIn = false; 
+        }
+
+        return uniqColors;
+    }
 
 }
