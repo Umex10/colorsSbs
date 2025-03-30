@@ -1,5 +1,8 @@
 package at.fhj.msd;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class Color {
 
@@ -59,5 +62,26 @@ public class Color {
         Color other = (Color) obj;
         return this.red == other.red && this.green == other.green && this.blue == other.blue;
     }
+
+    static Random rnd = new Random();
+
+    public static List<Color> randomColors(int amount) {
+
+        List<Color> colors = new ArrayList<>();
+
+        for (int i = 0; i < amount; i++) {
+            int red = rnd.nextInt(256);
+            int green = rnd.nextInt(256);
+            int blue = rnd.nextInt(256);
+
+            Color c = new Color(red, green, blue);
+
+            colors.add(c);
+        }
+
+        return colors;
+    }
+
+    
 
 }

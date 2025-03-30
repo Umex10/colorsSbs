@@ -1,5 +1,7 @@
 package at.fhj.msd;
 
+import java.util.List;
+
 
 public class App {
     public static void main(String[] args) {
@@ -16,8 +18,11 @@ public class App {
 
         System.out.printf("c1 = c2? --> %b\n", c1.equals(c2));
         System.out.printf("c1 = c3? --> %b\n", c1.equals(c3));
-        System.out.printf("c2 = c3? --> %b", c2.equals(c3));
+        System.out.printf("c2 = c3? --> %b\n", c2.equals(c3));
 
+        List<Color> colors = c1.randomColors(5);
+
+        System.out.println(colors);
 
     }
 }
