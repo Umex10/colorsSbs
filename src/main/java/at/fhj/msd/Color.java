@@ -82,14 +82,14 @@ public class Color {
         return randomColors;
     }
 
-    public static List<Color> uniqColors2(List<Color> randomColors) {
+    public static List<Color> uniqColors(List<Color> randomColors) {
 
         List<Color> uniqColors = new ArrayList<>();
         boolean isIn = false;
 
-        for (int i = 0; i<randomColors.size(); i++) {
-            
-            for (int u = 0; u<uniqColors.size(); u++) {
+        for (int i = 0; i < randomColors.size(); i++) {
+
+            for (int u = 0; u < uniqColors.size(); u++) {
                 if (uniqColors.get(u).equals(randomColors.get(i))) {
                     isIn = true;
                     break;
@@ -97,8 +97,22 @@ public class Color {
             }
             if (!isIn) {
                 uniqColors.add(randomColors.get(i));
-            } 
-            isIn = false; 
+            }
+            isIn = false;
+        }
+
+        return uniqColors;
+    }
+
+    public static List<Color> uniqColors2(List<Color> randomColors) {
+
+        List<Color> uniqColors = new ArrayList<>();
+
+        for (Color color : randomColors) {
+
+            if (!uniqColors.contains(color)) {
+                uniqColors.add(color);
+            }
         }
 
         return uniqColors;

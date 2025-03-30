@@ -23,8 +23,11 @@ public class App {
         List<Color> randomColors = c1.randomColors(50000);
 
         List<Color> uniqColors = c1.uniqColors(randomColors);
+        List<Color> uniqColors2 = c1.uniqColors2(randomColors);
 
-        System.out.printf("Size of randomColors: %d\nSize of uniqColors: %d", randomColors.size(), uniqColors.size());
+        System.out.printf("Size of randomColors: %d\nSize of uniqColors: %d\n", randomColors.size(), uniqColors.size());
+        System.out.println();
+        System.out.printf("Size of randomColors: %d\nSize of uniqColors2: %d", randomColors.size(), uniqColors2.size());
 
         
 
