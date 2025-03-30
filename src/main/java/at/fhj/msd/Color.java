@@ -118,4 +118,12 @@ public class Color {
         return uniqColors;
     }
 
+
+    @Override
+
+    public int hashCode() {
+
+       return this.hexFormat().hashCode();
+        
+    }
 }
