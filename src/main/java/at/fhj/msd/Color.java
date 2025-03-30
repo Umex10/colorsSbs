@@ -6,15 +6,19 @@ public class Color {
     private int green;
     private int blue;
 
-
     public Color(int red, int green, int blue) {
+
+        if ((red < 0 || green < 0 || blue < 0) || (red > 255 || green > 255 || blue > 255)) {
+
+           throw new IllegalArgumentException("Invalid values for the base colors");
+        }
+
         this.red = red;
         this.green = green;
         this.blue = blue;
     }
 
     //? Constructor
-
     public int getRed() {
         return this.red;
     }
@@ -26,5 +30,13 @@ public class Color {
     public int getGetBlue() {
         return this.blue;
     }
-    
+
+    public String hexFormat() {
+        return String.format("#%02x%02x%02x", this.red, this.green, this.blue).toUpperCase();
+    }
+
+    public String rgbFormat() {
+        return String.format("rgb(%d, %d, %d)", this.red, this.green, this.blue);
+    }
+
 }
